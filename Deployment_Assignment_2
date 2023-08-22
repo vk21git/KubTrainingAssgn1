@@ -1,0 +1,6 @@
+1. Modify the deployment.yaml , as per the new image version, also spec strategy type should be rollingUpdate 
+2. apply the updated yaml file
+3. we can also check the update progress
+4. to verify the zero downtime - maxunavailbale and maxSurge fields will help
+5. if required we can rollback
+6. if rolling update is fine , with the new version, then job is done
