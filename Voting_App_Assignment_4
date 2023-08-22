@@ -1,0 +1,149 @@
+
+Que 1)
+Now try to delete the Pods one by one (first voting Pod, then worker pod, then db pod)
+and see what happens to the voting and result app after deleting.
+
+Ans 1) 
+
+(a) voting pod deleted --> Observe what happens both in frontEnd & in Unix
+
+Voting App - front end is still working fine for voting app
+As deployment made this pod through rs
+Unix -> so new pod is spawned for voting app, with new ip address
+
+container is changed but no problem with the voting app
+
+(b) worker pod deleted --> Observe what happens both in frontEnd & in Unix
+
+Voting app is working fine
+Result app is working fine
+
+Unix -> so new pod is spawned for worker app
+
+(c) db pod deleted --> Observe what happens both in frontEnd & in Unix
+
+Voting app is working fine
+Result app stopped working
+
+Unix -> so new pod is spawned for db, but the data stored in db is gone
+result pod stopped working
+---------------------------------------------------------------------------------------------
+Que 2) what happens after db pod deletion. 
+
+Ans 2) Result app stopped working, so new pod is spawned for db
+
+result pod also stopped working, got error in logs
+
+---------------------------------------------------------------------------------------------
+Que 3) complete the assignment by making the result pod work. 
+(if you delete db pod, results would not be captured.So repeat what we did in the class in order to make the result pod work.)
+
+what you did in order to make the result pod work.
+
+Ans 3) restarted the result pod
+---------------------------------------------------------------------------------------------
+
+Que 4)  your comment on WHY result app STOPPED working after db pod stop
+
+Ans 4) because it gave error, it needs db pod to be running in order to run
+and db pod deleted and new pod created, but it look sometime
+
+---------------------------------------------------------------------------------------------
+Que 5 ) Some jargons (just names are enough- dont need sentences) that you learnt from the 40-hour Training session
+
+Ans 5) pods
+containers
+service
+pvc
+kubectl
+kubernetes
+docker
+yaml files
+deploy
+helm
+volume
+pv
+saas
+master server
+worker server
+nodes
+yum install
+docker start
+docker run
+docker inspect
+docker network ls
+docker attach
+docker exec -it
+docker tag
+docker push
+docker pull
+registry
+hub
+git
+git clone
+git commit
+port map
+config file
+etcd
+monolith
+cluster
+docker hub
+bridge
+tainting nodes
+explain
+describe
+resources
+hostname
+label
+namespace
+set-context
+kubectl config view
+stateless
+controllers
+scheduler
+loadbalancer
+replicationController
+replicaSet
+replication manager
+storageClass
+batch job
+cronjob
+DaemonSet
+nodeSelector
+status of pods
+frontend
+backend
+EndPoint
+NodePort
+deployment
+ip-table
+
+---------------------------------------------------------------------------------------------
+
+Que 6) Commands that you used during the assignment.
+
+Ans 6) cd /root/
+kubectl delete all --all;
+yum install git -y
+git clone  https://github.com/ashishrpandey/example-voting-app
+
+cd  /root/example-voting-app/k8s-specifications
+kubectl apply -f .
+
+vi app.py
+vi Program.cs
+vi server.js
+kubectl get all
+ll
+kubectl get po -owide
+kubectl get po
+kubectl get svc
+kubectl delete pod <PodName>
+kubectl logs <PodName>
+---------------------------------------------------------------------------------------------
+Que 7) snapshot of logs (wherever possible) -  not mandatory
+
+Ans 7) As it is not mandatory , so skipped it
+
+---------------------------------------------------------------------------------------------
+
