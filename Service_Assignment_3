@@ -1,0 +1,27 @@
+1. kubectl get pods 
+
+to check pods and their status, will describe pods and check for any error
+
+-------------------------------------------------------------------------
+2. will Check NodePort service is created fine and targeting the right pods
+
+kubectl get svc
+
+to list all services and will check the NodePort service config
+also I can describe svc to check for error
+-------------------------------------------------------------------------
+3. Checking NodePorts are correctly mapped to the port on which my application is listening
+Check the "spec.ports.nodePort" field in the service yaml
+-------------------------------------------------------------------------
+4. If the pods are running, 
+will check the console logs, or application log, or data logs
+if there are any error preventing the app from starting or listening on the 8000 port
+
+-------------------------------------------------------------------------
+5. will check nodes are properly working, will describe the nodes and check for any issue
+-------------------------------------------------------------------------
+6. will check that pods are assigned to nodes
+-------------------------------------------------------------------------
+7. I will check that if that port is being used somewhere else
+and the port number 8000 comees in the port range or not in config file
+-------------------------------------------------------------------------
